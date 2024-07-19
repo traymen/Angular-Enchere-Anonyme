@@ -1,0 +1,92 @@
+<nav class="navbar">
+  <ul class="navbar-list">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="">Gestion des utilisateurs</a></li>
+      <li><a href="/manage-enchere-admin">Gestion Des Encheres</a></li>
+      <li><a href="/list-encheres-admin">Liste Enchere</a></li>
+
+      <li><a href="#" (click)="logout()">Se déconnecter</a></li>
+  </ul>
+</nav>
+
+
+<!-- hitoru -->
+
+<div class="col-md-6 position-relative">
+  <label for="type" class="form-label"> Filtrer par Catégorie : </label>
+  <select [(ngModel)]="selectedType" (change)="loadEncheres()" class="form-control custom-select" id="type" name="type">
+    <option value="">Tous les Catégorie</option>
+    <option value="VETEMENTSPORT">Vêtements de sport</option>
+    <option value="ELECTRONIQUE">Électronique</option>
+    <option value="VETEMENT">Vêtements</option>
+    <option value="VOITURE">Voiture</option>
+    <option value="ELECTROMENAGER">Électroménager</option>
+    <option value="MONTREetBIJOUX">Montre et Bijoux</option>
+  </select>
+  <i class="fas fa-chevron-down position-absolute" style="right: 15px; top: 55px; pointer-events: none;"></i>
+</div>
+
+
+
+<!-- history -->
+
+
+
+
+
+<div class="history-container">
+  <h2 class="primary">Liste des Encheres Terminer </h2>
+  <div class="mobilite-list">
+    <div *ngFor="let enchere of enchereList" class="mobilite-card">
+      <div class="image-and-info">
+        <div class="container">
+              <div class="col-md-6">
+                
+              <div class="property text-secondaryyy">
+                <span class="label"> Vendu à:</span>
+                <span class="prix">{{ enchere.prixGagnant }} <span class="label">DT</span></span>
+              </div>
+            </div>
+
+          </div>
+      
+        <hr>
+
+        <div class="enchere-image">
+          <img [src]="'data:image/jpeg;base64,' + enchere.image" alt="Image de {{ enchere.nomProduit }}" class="flexible-image">
+        </div>
+        <hr>
+ <!-- Bouton de like (cœur) -->
+ 
+        <div class="info">
+         
+          <div class="property text-secondary">
+            <span class="label">Nom produit:</span>
+            <span class="nomproduit">{{ enchere.nomProduit }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Description produit:</span>
+            <span class="description">{{ enchere.descriptionProduit }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label"> Prix:</span>
+            <span class="prix">{{ enchere.prix }} <span class="label">DT</span></span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Date:</span>
+            <span class="date">{{ enchere.date }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Heure:</span>
+            <span class="heure">{{ enchere.heure }}</span>
+          </div>
+          <hr>
+
+        </div>
+      </div>
+     
+  </div>
+</div>
+<div *ngIf="message" class="alert alert-info custom-alert">
+  {{ message }}
+</div>

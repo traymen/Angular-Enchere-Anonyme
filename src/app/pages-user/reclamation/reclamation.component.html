@@ -1,0 +1,19 @@
+<!-- reclamation-form.component.html -->
+<form (ngSubmit)="onSubmit()" #reclamationForm="ngForm">
+    <div>
+        <label for="type">Type de Réclamation:</label>
+        <select id="type" [(ngModel)]="reclamtion.type" name="type" required>
+          <option value="ProblemeEnchere">Problème d'Enchère</option>
+          <option value="ProblemePaiement">Problème de Paiement</option>
+          <option value="Problemecompteutilisateur">Problème de Compte Utilisateur</option>
+          <option value="Problemetechnique">Problème Technique</option>
+        </select>
+      </div>
+    <div>
+      <label for="contenu">Contenu:</label>
+      <textarea id="contenu" [(ngModel)]="reclamtion.contenu" name="contenu" required></textarea>
+    </div>
+  
+    <button type="submit">Soumettre</button>
+  </form>
+  

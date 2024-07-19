@@ -1,0 +1,112 @@
+<!--div class="container-fluid card login-container">
+    <h3 class="text-center">Create an account</h3>
+    <hr>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+      <p *ngFor="let msg of errorMsg">{{msg}}</p>
+    </div>
+    <div class="mb-3">
+      <label for="firstname" class="form-label">Firstname</label>
+      <input [(ngModel)]="registerRequest.firstname" type="text" class="form-control" id="firstname" placeholder="Firstname">
+    </div>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Lastname</label>
+      <input [(ngModel)]="registerRequest.lastname" type="text" class="form-control" id="lastname" placeholder="Lastname">
+    </div>
+    <div class="mb-3">
+      <label for="login" class="form-label">Email address</label>
+      <input [(ngModel)]="registerRequest.email" type="email" class="form-control" id="login" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input [(ngModel)]="registerRequest.password" type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="d-flex justify-content-between mb-3">
+      <button (click)="register()" type="button" class="btn btn-primary">
+        <em class="fas fa-sign-in-alt">&nbsp;Create an account</em>
+      </button>
+      <div>
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" [(ngModel)]="enchereRequest.nom" name="nom">
+      </div>
+      <div>
+        Already have an account?&nbsp;
+        <button (click)="login()" type="button" class="btn btn-link">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>-->
+
+
+
+
+  
+  
+
+
+
+
+
+  <!--div class="p-2">
+    <h2>Manage enchere</h2>
+    <hr>
+    <div class="alert alert-danger mt-2" role="alert" *ngIf="errorMsg.length">
+      <p class="p-0 m-0" *ngFor="let msg of errorMsg">{{msg}}</p>
+    </div>
+    <div class="d-flex gap-2">
+      <div class="col-3">
+        <img class="rounded-1" width="100%" height="100%" [src]=" selectedPicture || 'https://source.unsplash.com/user'" alt="">
+        <div class="mt-2">
+          <input
+            (change)="onFileSelected($event)"
+            class="form-control"
+            type="file"
+            id="formFile"
+            accept="image/*"
+          >
+        </div>
+      </div>
+      <div class="col-9">
+        <form class="row g-3">
+            
+          <div class="col-md-6">
+            <label for="nomProduit" class="form-label">Nom produit</label>
+            <input [(ngModel)]="enchereRequest.nomProduit" class="form-control" id="nomProduit" name="nomProduit"
+                   placeholder="Nom produit">
+        </div>
+        <div class="col-md-6">
+            <label for="descriptionProduit" class="form-label">Description de produit</label>
+            <input [(ngModel)]="enchereRequest.descriptionProduit" class="form-control" id="descriptionProduit" name="descriptionProduit"
+                   placeholder="Description de produit">
+        </div>
+        <div class="col-md-6">
+            <label for="prixProduit" class="form-label">Prix produit</label>
+            <input [(ngModel)]="enchereRequest.prix" class="form-control" id="prixProduit" name="prixProduit"
+                   placeholder="Prix produit">
+        </div>
+        <div class="col-md-6">
+          <label for="nombreCondidat" class="form-label">Nombre Condidat</label>
+          <input [(ngModel)]="enchereRequest.nombreCondidat" class="form-control" id="nombreCondidat" name="nombreCondidat"
+                 placeholder="Prix produit">
+      </div>
+         
+          <div class="col-md-6">
+            <label for="date" class="form-label">Date</label>
+            <input [(ngModel)]="enchereRequest.date" type="date" class="form-control" id="date" name="date">
+        </div>
+        
+        <div class="col-md-6">
+          <label for="heure" class="form-label">Heure</label>
+          <input [(ngModel)]="enchereRequest.heure" type="time" class="form-control" id="heure" name="heure">
+      </div>
+      
+          <div class="d-flex justify-content-end gap-2 col-12">
+            <button (click)="saveBook()" type="submit" class="btn btn-outline-primary">
+              <i class="fas fa-save"></i>&nbsp;Save
+            </button>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>-->

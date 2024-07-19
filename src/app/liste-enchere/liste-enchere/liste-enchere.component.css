@@ -1,0 +1,120 @@
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-list li {
+    margin: 0 10px;
+}
+
+.navbar-list li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar-list li a:hover {
+    background-color: #555;
+}
+
+
+
+
+.container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f4f4f9;
+}
+
+.enchere-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.enchere-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.enchere-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.enchere-image {
+  flex: 0 0 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.flexible-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.enchere-details {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enchere-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  font-size: 1em;
+  color: #333;
+}
+
+.enchere-info span {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 4px;
+  display: block;
+}
+
+.enchere-prix {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.enchere-date,
+.enchere-heure,
+.enchere-nombre,
+.enchere-nom,
+.enchere-description {
+  color: #5bc0de;
+}
+
+.enchere-nom {
+  font-weight: bold;
+  color: #333;
+}
+
+.enchere-description {
+  color: #777;
+}
+.icon-clock {
+  margin-right: 5px;
+  vertical-align: middle;
+}

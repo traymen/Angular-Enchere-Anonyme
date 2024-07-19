@@ -1,0 +1,39 @@
+.container-fluid.card.login-container {
+    max-width: 400px; /* Définissez la largeur maximale de votre formulaire */
+    margin: auto; /* Centrez le formulaire horizontalement sur la page */
+    padding: 20px; /* Ajoutez un espace intérieur pour le contenu */
+    border: 1px solid #ccc; /* Ajoutez une bordure pour le contour du formulaire */
+    border-radius: 5px; /* Arrondissez les coins du formulaire */
+    background-color: #f9f9f9; /* Couleur de fond du formulaire */
+  }
+  
+  h3.text-center {
+    margin-bottom: 20px; /* Ajoutez un espace sous le titre "Login" */
+  }
+  
+  .alert.alert-danger {
+    margin-bottom: 20px; /* Ajoutez un espace sous le message d'erreur */
+  }
+  
+  .mb-3 {
+    margin-bottom: 15px; /* Ajoutez un espacement entre les éléments du formulaire */
+  }
+  
+  .d-flex.justify-content-between.mb-3 {
+    margin-top: 20px; /* Ajoutez un espacement au-dessus des boutons Sign in et Register */
+  }
+  
+  .btn.btn-primary {
+    width: 150px; /* Définissez une largeur pour le bouton Sign in */
+  }
+  
+  .btn.btn-link {
+    color: blue; /* Couleur du texte pour le lien "Register" */
+    text-decoration: underline; /* Soulignez le texte du lien */
+  }
+  
+  .btn.btn-link:hover {
+    color: darkblue; /* Couleur du texte du lien au survol */
+    text-decoration: underline; /* Soulignez le texte du lien au survol */
+  }
+  
