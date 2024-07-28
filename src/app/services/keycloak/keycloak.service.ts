@@ -18,7 +18,8 @@ export class KeycloakService {
   get keycloak() {
     if (!this._keycloak) {
       this._keycloak = new Keycloak({
-        url: 'http://localhost:8080',
+     //   url: 'http://localhost:8080',
+     url: 'http://http://192.168.2.132/:8085',
         realm: 'enchere',
         clientId: 'bsn'
       });
