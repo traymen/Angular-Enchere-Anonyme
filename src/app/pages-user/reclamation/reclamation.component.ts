@@ -20,7 +20,7 @@ export class ReclamationComponent {
     firstname: '',
     gmail: '',
     lastname : '',
-    type: 'Probleme Enchere' 
+    type: 'ProblemeEnchere' 
   };
 
   onSubmit = () => {

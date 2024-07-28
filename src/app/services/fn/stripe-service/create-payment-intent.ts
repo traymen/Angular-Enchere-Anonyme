@@ -6,14 +6,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { Reclamation } from '../../models/reclamation';
+import { Request } from '../../models/request';
+import { Response } from '../../models/response';
 
-export interface GetAllReclamations$Params {
+export interface CreatePaymentIntent$Params {
+      body: Request
 }
 
-export function getAllReclamations(http: HttpClient, rootUrl: string, params?: GetAllReclamations$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<Reclamation>>> {
-  const rb = new RequestBuilder(rootUrl, getAllReclamations.PATH, 'get');
+export function createPaymentIntent(http: HttpClient, rootUrl: string, params: CreatePaymentIntent$Params, context?: HttpContext): Observable<StrictHttpResponse<Response>> {
+  const rb = new RequestBuilder(rootUrl, createPaymentIntent.PATH, 'post');
   if (params) {
+    rb.body(params.body, 'application/json');
   }
 
   return http.request(
@@ -21,9 +24,9 @@ export function getAllReclamations(http: HttpClient, rootUrl: string, params?: G
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<Array<Reclamation>>;
+      return r as StrictHttpResponse<Response>;
     })
   );
 }
 
-getAllReclamations.PATH = '/reclamation';
+createPaymentIntent.PATH = '/create-payment-intent';

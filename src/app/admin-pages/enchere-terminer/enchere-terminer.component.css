@@ -1,34 +1,12 @@
-.navbar {
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-}
 
-.navbar-list {
-  list-style: none;
-  display: flex;
-}
-
-.navbar-list li {
-  margin: 0 10px;
-}
-
-.navbar-list li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 10px;
-  transition: background-color 0.3s;
-}
-
-.navbar-list li a:hover {
-  background-color: #555;
-}
 
 
 .form-label{
   font-size: 1.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
 margin-top: 20px;
 font-weight: bold;       /* Texte en gras */
+margin-left: 150px; /* Largeur de la barre latérale */
+margin-top: 20px; /* Hauteur de la barre de navigation */
 
 }
 
@@ -36,7 +14,7 @@ font-weight: bold;       /* Texte en gras */
 /* styles.css ou your-component.component.css */
 .custom-alert {
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 20px;
   border: 1px solid #bce8f1;
   border-radius: 4px;
@@ -57,6 +35,11 @@ font-weight: bold;       /* Texte en gras */
 padding: 20px;
 max-width: 1200px;
 margin: auto;
+margin-left: 20px; /* Largeur de la barre latérale */
+margin-top: 5px; /* Hauteur de la barre de navigation */
+background-color: #f8f9fa; /* Exemple de couleur de fond */
+min-height: calc(100vh - 70px); /* Assurez-vous que le contenu couvre la hauteur restante */
+
 }
 
 .primary {

@@ -251,3 +251,154 @@ transition: color 0.3s ease;
 font-size: 1.5em;
 }
 
+
+.center-container {
+  display: flex; /* Utilise flexbox pour le centrage */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  padding: 0 15px; /* Espacement horizontal */
+
+}
+
+.custom-select {
+  position: relative; /* Assure que l'icône est correctement positionnée par rapport au sélecteur */
+  border-radius: 0.25rem; /* Arrondir les coins du sélecteur */
+  background-color: #ffffff; /* Couleur de fond blanche */
+  border: 1px solid #ced4da; /* Bordure grise légère */
+  padding: 0.375rem 0.75rem; /* Espacement interne */
+  font-size: 1rem; /* Taille de la police */
+  line-height: 1.5; /* Hauteur de ligne */
+  color: #495057; /* Couleur du texte */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transition pour les effets de bordure et d'ombre */
+}
+
+.custom-select:focus {
+  border-color: #80bdff; /* Couleur de la bordure au focus */
+  outline: 0; /* Supprime l'indicateur de focus par défaut */
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Ombre portée au focus */
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.form-control.custom-select {
+  display: block; /* Assure que le sélecteur occupe toute la largeur disponible */
+  width: 100%; /* Largeur complète */
+}
+
+.fas.fa-chevron-down {
+  font-size: 1rem; /* Taille de l'icône */
+  color: #6c757d; /* Couleur de l'icône */
+}
+
+.form-label {
+  margin-bottom: 0.5rem; /* Espacement sous le label */
+  font-size: 1rem; /* Taille de la police */
+  color: #212529; /* Couleur du texte */
+  margin-top: 20px;
+}
+
+.col-md-6 {
+  width: 50%; /* Largeur de la colonne */
+  margin-bottom: 1rem; /* Espacement en bas */
+}
+
+
+
+
+
+/* Conteneur pour le message d'alerte */
+.alert-container {
+  display: flex; /* Utilise flexbox pour le centrage */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  position: fixed; /* Position fixe pour le centrage sur la page */
+  top: 50%; /* Position verticale centrale */
+  left: 50%; /* Position horizontale centrale */
+  transform: translate(-50%, -50%); /* Ajuste pour centrer précisément */
+  width: 80%; /* Largeur du conteneur */
+  max-width: 600px; /* Largeur maximale */
+  z-index: 9999; /* Assure que le message est au-dessus des autres éléments */
+}
+
+.custom-alert {
+  background-color: #d9edf7; /* Couleur de fond bleue claire */
+  color: #000000; /* Couleur du texte bleue foncée */
+  padding: 20px; /* Espacement interne */
+  border: 1px solid #bce8f1; /* Bordure bleue claire */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+  text-align: center; /* Centre le texte */
+}
+
+
+
+
+
+
+.buttonnn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0px 15px;
+  background-color: rgb(66, 66, 66);
+  border-radius: 10px;
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.bell {
+  width: 13px;
+}
+
+.bell path {
+  fill: rgb(0, 206, 62);
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonnn:hover {
+  background-color: rgb(77, 77, 77);
+  transition-duration: .2s;
+}
+
+.buttonnn:hover .arrow {
+  animation: slide-right .6s ease-out both;
+}
+/* arrow animation */
+@keyframes slide-right {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.buttonnn:active {
+  transform: translate(1px , 1px);
+  transition-duration: .2s;
+}

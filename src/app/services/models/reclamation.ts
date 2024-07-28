@@ -9,5 +9,5 @@ export interface Reclamation {
   idReclamation?: number;
   lastname?: string;
   reponse?: string;
-  type?: 'Probleme Enchere' | 'Probleme Paiement' | 'Probleme compte utilisateur' | 'Probleme technique';
+  type?: 'ProblemeEnchere' | 'ProblemePaiement' | 'Problemecompteutilisateur' | 'Problemetechnique';
 }

@@ -96,7 +96,7 @@ export class ManageEnchereComponent {
                 this.showSuccess = true; // Affiche la fenêtre de succès
                 setTimeout(() => {
                   this.showSuccess = false;
-                  this.router.navigate(['/list-enchere-admin']);
+                  this.router.navigate(['/dashboard/list-enchere-admin']);
                 }, 2000);
 
               },

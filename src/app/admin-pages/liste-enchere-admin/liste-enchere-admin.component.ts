@@ -63,7 +63,7 @@ export class ListeEnchereAdminComponent {
 
  navigateByIdEnchere(enchere: any) {
    console.log("Enchere:", enchere);
-   const url = '/list-participant/' + enchere.idEnchere;
+   const url = '/dashboard/list-participant/' + enchere.idEnchere;
    console.log("Redirection URL:", url);
    this.router.navigateByUrl(url);
  }
@@ -103,7 +103,7 @@ onSubmitt() {
           this.showSuccess = true;
           setTimeout(() => {
             this.showSuccess = false;
-            this.router.navigate(['list-encheres-terminer']).then(() => {
+            this.router.navigate(['dashboard/list-encheres-terminer']).then(() => {
               location.reload();
             });
           }, 1000); 

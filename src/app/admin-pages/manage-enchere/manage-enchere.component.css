@@ -1,28 +1,4 @@
-.navbar {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-}
 
-.navbar-list {
-    list-style: none;
-    display: flex;
-}
-
-.navbar-list li {
-    margin: 0 10px;
-}
-
-.navbar-list li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    transition: background-color 0.3s;
-}
-
-.navbar-list li a:hover {
-    background-color: #555;
-}
 
 
 
@@ -104,6 +80,8 @@
     -moz-appearance: none;
     position: relative;
     padding-right: 30px; /* Adjust padding for the arrow */
+    margin-left: 450px; /* Largeur de la barre latérale */
+    margin-top: 10px; /* Hauteur de la barre de navigation */
   }
   
   .custom-select::-ms-expand {

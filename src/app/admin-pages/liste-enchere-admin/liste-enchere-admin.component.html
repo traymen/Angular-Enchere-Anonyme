@@ -1,14 +1,4 @@
-<nav class="navbar">
-    <ul class="navbar-list">
-        <li><a href="#">Accueil</a></li>
-        <li><a href="">Gestion des utilisateurs</a></li>
-        <li><a href="/manage-enchere-admin">Gestion Des Encheres</a></li>
-        <li><a href="/list-encheres-terminer">Encheres Terminer</a></li>
-       
-        
-        <li><a href="#" (click)="logout()">Se déconnecter</a></li>
-    </ul>
-</nav>
+
 
 <div *ngIf="showSuccess" class="success-dialog">
   <div class="success-content">
@@ -80,19 +70,20 @@
       </div>
       <div class="button-container">
         <div class="top-buttons">
-          <button (click)="navigateByIdEnchere(enchere)" class="inscription-button btn btn-primary">Condidats Inscrits</button>
-          <button type="button" class="btn btn-primary" (click)="onDeleteEnchere(enchere.idEnchere)">Supprimer Enchere</button>
+            <button (click)="navigateByIdEnchere(enchere)" class="inscription-button btn btn-primary">Condidats Inscrits</button>
+            <button type="button" class="btn btn-danger" (click)="onDeleteEnchere(enchere.idEnchere)">Supprimer Enchere</button>
         </div>
         <div class="vertical-hr"></div>
         <div class="bottom-buttons">
-          <button type="button" class="btn btn-primary" (click)="getdata(enchere.nomProduit, enchere.descriptionProduit, enchere.prix, enchere.date, enchere.heure, enchere.nombreCondidat, enchere.idEnchere, enchere.image)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Modifier Enchere
-          </button>
-          <button type="button" class="btn btn-danger" (click)="getdata2(enchere.idEnchere)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Terminer l'enchere
-          </button>
+            <button type="button" class="btn btn-primary" (click)="getdata(enchere.nomProduit, enchere.descriptionProduit, enchere.prix, enchere.date, enchere.heure, enchere.nombreCondidat, enchere.idEnchere, enchere.image)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Modifier Enchere
+            </button>
+            <button type="button" class="btn btn-danger" (click)="getdata2(enchere.idEnchere)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Terminer l'enchere
+            </button>
         </div>
-      </div>
+    </div>
+    
       
     </div>
   </div>

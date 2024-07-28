@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Encheree } from 'src/app/modelss/encheree';
 //import { Participant } from 'src/app/modelss/participant';
@@ -19,16 +19,21 @@ import { Observable } from 'rxjs';
 })
 export class ParticipationuserComponent {
   errorMsg: Array<string> = [];
-  
+  myForm: FormGroup;
+  showSuccess: boolean = false;
+
 
   constructor(
-   // private bookService: EnchereService,
     private router: Router,
     private lesservices: ServicesssService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private participantService:ParticipantService
   ) {
+    this.myForm = this.formBuilder.group({
+      prix: ['', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]+)?$')]]
+
+    });
   }
 
 idEnch!: any;
@@ -37,75 +42,43 @@ ngOnInit(): void {
 
 }
 
-//participant: Participant = new Participant();
-
-//[(ngModel)]="participant.prix"
-//enchere: Encheree = new Encheree();
-
-/*
-onSubmit = () => {
-  const accessToken = localStorage.getItem('accessToken');
-
-  if (!accessToken) {
-    console.error('Access token not found in local storage');
-    return;
-  }
-
-  const decodedToken: any = jwtDecode(accessToken);
-  const userId = decodedToken.sub; // Obtenez l'ID de l'utilisateur à partir du token décodé
-
-  this.participant.createdBy = userId; // Ajoutez l'ID de l'utilisateur à la demande d'enchère
-  console.log(' syes',userId);
-
-  this.lesservices.ajouterParticipation(this.participant, this.idEnch, accessToken)
-  .subscribe(
-    response => {
-
-      console.log(' saved successfully', response);
-    },
-    error => {
-      console.error('Error saving ', error);
-    }
-  );
-}
-*/
-
-participant: Participant = {
-  prix: 0
- 
-};
+participant: Participant = {};
 onSubmit = () => {
   const token = localStorage.getItem('token');
 
   if (!token) {
-    console.error('Access token not found in local storage');
+    console.error('Token not found in local storage');
     return;
   }
 
   const decodedToken: any = jwtDecode(token);
 
- // const userId = decodedToken.sub; // Obtenez l'ID de l'utilisateur à partir du token décodé
   const firstname = decodedToken.given_name;
   const lastname = decodedToken.family_name;
   const gmail = decodedToken.email;
   this.participant.firstname = firstname; 
-  this.participant.lastname = lastname; // Ajoutez l'ID de l'utilisateur à la demande d'enchère
-  this.participant.gmail = gmail; // Ajoutez l'ID de l'utilisateur à la demande d'enchère
-  // Ajoutez l'ID de l'utilisateur à la demande d'enchère
- // console.log(' syes',userId);
+  this.participant.lastname = lastname; 
+  this.participant.gmail = gmail; 
   this.participantService.saveParticipation({
     idEnchere: this.idEnch,
     body: this.participant
   })
-  .subscribe(
-    response => {
+  .subscribe({
+    next: () => {
+      console.log('Saved successfully');
 
-      console.log(' saved successfully', response);
+      this.showSuccess = true; // Affiche la fenêtre de succès
+      setTimeout(() => {
+        this.showSuccess = false;
+        this.router.navigate(['/history-user']);
+      }, 2000);
+
     },
-    error => {
-      console.error('Error saving ', error);
+    error: (error) => {
+      console.error('Error saving', error);
     }
-  );
+  });
 }
+
 
 }

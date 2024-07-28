@@ -8,6 +8,7 @@ import { ReclamationService } from './services/reclamation.service';
 import { ParticipantService } from './services/participant.service';
 import { FavorisService } from './services/favoris.service';
 import { EnchereService } from './services/enchere.service';
+import { StripeServiceService } from './services/stripe-service.service';
 
 /**
  * Module that provides all services and configuration.
@@ -21,6 +22,7 @@ import { EnchereService } from './services/enchere.service';
     ParticipantService,
     FavorisService,
     EnchereService,
+    StripeServiceService,
     ApiConfiguration
   ],
 })

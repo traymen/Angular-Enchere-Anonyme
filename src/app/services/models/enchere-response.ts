@@ -4,6 +4,7 @@ import { LocalTime } from '../models/local-time';
 export interface EnchereResponse {
   date?: string;
   descriptionProduit?: string;
+  etat?: 'Terminer' | 'Encours';
   heure?: LocalTime;
   idEnchere?: number;
   image?: Array<string>;

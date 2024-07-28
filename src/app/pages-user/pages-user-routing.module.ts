@@ -7,6 +7,7 @@ import { MesFavorisComponent } from './mes-favoris/mes-favoris.component';
 import { UserComponent } from './user/user.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { HistoriqueReclamationComponent } from './historique-reclamation/historique-reclamation.component';
+import { PaymentComponent } from './payment-component/payment-component.component';
 
 const routes: Routes = [{
   path: 'user-participate/:idEnchere',
@@ -31,7 +32,12 @@ const routes: Routes = [{
 {
   path: 'historiquereclamation',
   component: HistoriqueReclamationComponent
-}];
+},
+{
+  path: 'payment/:idEnchere',
+  component: PaymentComponent
+}
+];
 
 
 

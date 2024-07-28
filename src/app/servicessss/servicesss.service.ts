@@ -91,6 +91,10 @@ export class ServicesssService {
     return this.http.delete(`${this.baseUrl}/DeleteEnchree?EnchereId=${idEnchere}`, { headers });
   }
 
+  private stripe = 'http://localhost:1920/create-payment-intent'; // URL du backend Spring Boot
+  createPaymentIntent(amount: number, productName: string, email: string): Observable<any> {
+    return this.http.post<any>(this.stripe, { amount, productName, email });
+  }
 }
 
 

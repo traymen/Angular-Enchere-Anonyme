@@ -7,6 +7,8 @@ import { ManageEnchereComponent } from './manage-enchere/manage-enchere.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListeParticipantComponent } from './liste-participant/liste-participant.component';
 import { EnchereTerminerComponent } from './enchere-terminer/enchere-terminer.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import { MainadminComponent } from './mainadmin/mainadmin.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { EnchereTerminerComponent } from './enchere-terminer/enchere-terminer.co
     ListeEnchereAdminComponent,
     ManageEnchereComponent,
     ListeParticipantComponent,
-    EnchereTerminerComponent
+    EnchereTerminerComponent,
+    ReclamationComponent,
+    MainadminComponent
   ],
   imports: [
     CommonModule,

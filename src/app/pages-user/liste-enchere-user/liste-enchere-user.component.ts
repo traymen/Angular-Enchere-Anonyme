@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EnchereResponse } from 'src/app/modelss/enchere-response';
 import { Encheree } from 'src/app/modelss/encheree';
+import { GetListEnchereType$Params } from 'src/app/services/fn/enchere/get-list-enchere-type';
 import { AddFavorite$Params } from 'src/app/services/fn/favoris/add-favorite';
 import { KeycloakService } from 'src/app/services/keycloak/keycloak.service';
 import { Enchere, Favoris } from 'src/app/services/models';
@@ -19,33 +20,13 @@ export class ListeEnchereUserComponent {
  ngOnInit(): void {
    this.loadEncheres();
 
- //  this.listeEnchere();
  }
- /*
- enchereList: any[] = [];
-
- listeEnchere(): void {
-   this.lesservices.getListEnchere().subscribe(data => {
-       console.log(data)
-     this.enchereList.push(...data)
-   });
- }
- */
-
-
- //private _book: BookResponse = {};
+ 
  enchereList: EnchereResponse[];
+ selectedType: GetListEnchereType$Params['type'] | '' = '';
+ message: string = '';
+
 /*
- get bookCover(): string | undefined {
-   if (this.enchereList.image) {
-     return 'data:image/jpg;base64,' + this.enchereList.image
-
-  }
-  return 'https://source.unsplash.com/user/';
-
- }
- */
-
  loadEncheres() {
    this.lesservices.getListEnchere().subscribe(
      (data: EnchereResponse[]) => {
@@ -56,17 +37,54 @@ export class ListeEnchereUserComponent {
      }
    );
  }
+*/
 
+loadEncheres() {
+  if (this.selectedType) {
+    this.lesservices.getListEnchereByType(this.selectedType).subscribe(
+      (data: EnchereResponse[]) => {
+        this.enchereList = data;
+        if (data.length === 0) {
+          this.message = "Pas d'enchère disponible dans cette catégorie pour le moment.";
+        } else {
+          this.message = '';
+        }
+      },
+      (error) => {
+        console.log('Erreur lors du chargement des enchères :', error);
+      }
+    );
+  } else {
+    this.lesservices.getListEnchere().subscribe(
+      (data: EnchereResponse[]) => {
+        this.enchereList = data;
+        if (data.length === 0) {
+          this.message = "Pas d'enchère disponible pour le moment.";
+        } else {
+          this.message = '';
+        }
+      },
+      (error) => {
+        console.log('Erreur lors du chargement des enchères :', error);
+      }
+    );
+  }
+}
 
-
-
+/*
  navigateByIdEnchere(enchere: any) {
    console.log("Enchere:", enchere);
    const url = '/user-participate/' + enchere.idEnchere;
    console.log("Redirection URL:", url);
    this.router.navigateByUrl(url);
  }
-
+*/
+navigateByIdEnchere(enchere: any) {
+  console.log("Enchere:", enchere);
+  const url = '/payment/' + enchere.idEnchere;
+  console.log("Redirection URL:", url);
+  this.router.navigateByUrl(url);
+}
  logout() {
   this.keycloakService.logout();
 }

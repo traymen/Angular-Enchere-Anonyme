@@ -41,18 +41,7 @@ export class EnchereTerminerComponent {
  message: string = '';
 
 
-/*
- loadEncheres() {
-   this.lesservices.getListEnchere2().subscribe(
-     (data: EnchereResponse[]) => {
-       this.enchereList = data;
-     },
-     (error) => {
-       console.log('Erreur lors du chargement des enchères :', error);
-     }
-   );
- }
-*/
+
 loadEncheres() {
   if (this.selectedType) {
     this.lesservices.getListEnchereByType(this.selectedType).subscribe(

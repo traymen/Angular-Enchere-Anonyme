@@ -32,9 +32,11 @@
 
 
 .history-container {
-  padding: 20px;
   max-width: 1200px;
-  margin: auto;
+    margin-left: 30px; /* Largeur de la barre latérale */
+    margin-top: 10px; /* Hauteur de la barre de navigation */
+    background-color: #f8f9fa; /* Exemple de couleur de fond */
+
 }
 
 .primary {
@@ -116,22 +118,7 @@
   font-size: 1.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
 }
 
-.button-container {
-  display: flex;
-  flex-direction: column; /* Disposition en colonne pour les boutons */
-  align-items: flex-end; /* Alignement des boutons à droite */
-  margin-top: 10px; /* Espacement des boutons par rapport aux informations */
-}
 
-.top-buttons {
-  margin-bottom: 10px;
-  margin-right: 10px; /* Espacement entre les boutons du haut et du bas */
-}
-
-.bottom-buttons button {
-  margin-top: 10px; 
-  margin-right: 10px;  /* Espacement entre les boutons du bas */
-}
 
 .vertical-hr {
   border-left: 1px solid black; /* Définit la bordure à gauche pour créer une ligne verticale */
@@ -269,4 +256,27 @@
   75% {
     transform: rotate(-10deg);
   }
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacement entre les groupes de boutons */
+  padding: 20px; /* Padding autour de la conteneur des boutons */
+  background-color: #f8f9fa; /* Optionnel : Couleur de fond pour meilleure visibilité */
+  border-radius: 8px; /* Optionnel : Coins arrondis pour un meilleur look */
+}
+
+.top-buttons,
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espacement entre les boutons dans chaque groupe */
+}
+
+.vertical-hr {
+  height: 2px;
+  background-color: #dee2e6; /* Couleur pour la ligne verticale */
+  margin: 10px 0; /* Espacement autour de la ligne verticale */
 }

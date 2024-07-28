@@ -4,6 +4,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 20px;
   overflow: hidden;
+  margin-left: 40px; /* Largeur de la barre latérale */
+  margin-top: 5px; /* Hauteur de la barre de navigation */
+
 }
 
 .card-body {
@@ -63,6 +66,7 @@
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+
 .text-dark {
   color: #333;
 }
@@ -98,3 +102,5 @@ font-size: 1.5em;
   color:gray;
 font-size: 0.8em;
 }
+
+

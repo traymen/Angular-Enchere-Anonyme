@@ -7,7 +7,7 @@ const routes: Routes = [{path:'register',loadChildren:()=>import('./userregistre
 {path:'activate-account',loadChildren:()=>import('./activate-account/activate-account.module').then(m=>m.ActivateAccountModule)},
 //{path:'liste-enchere',loadChildren:()=>import('./liste-enchere/liste-enchere-routing.module').then(m=>m.ListeEnchereRoutingModule)},
 //{path:'ajout-enchere/:idEnchere',loadChildren:()=>import('./ajoutenchere/ajoutenchere.module').then(m=>m.AjoutenchereModule)},
-{path:'',redirectTo:'list-enchere-admin', pathMatch:'full'},
+{path:'',redirectTo:'dashboard', pathMatch:'full'},
 {path:'',loadChildren:()=>import('./pages-user/pages-user.module').then(m=>m.PagesUserModule)},
 {path:'',loadChildren:()=>import('./admin-pages/admin-pages.module').then(m=>m.AdminPagesModule)}
 

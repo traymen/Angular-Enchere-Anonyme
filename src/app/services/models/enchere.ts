@@ -7,6 +7,7 @@ export interface Enchere {
   createdDate?: string;
   date?: string;
   descriptionProduit?: string;
+  etat?: 'Terminer' | 'Encours';
   favorisList?: Array<Favoris>;
   heure?: LocalTime;
   idEnchere?: number;

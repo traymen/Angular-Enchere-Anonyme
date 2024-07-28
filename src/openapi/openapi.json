@@ -32,27 +32,6 @@
     ],
     "paths": {
         "/reclamation": {
-            "get": {
-                "tags": [
-                    "Reclamation"
-                ],
-                "operationId": "getAllReclamations",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Reclamation"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "post": {
                 "tags": [
                     "Reclamation"
@@ -78,6 +57,40 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/reclamation/AjoutReponseReclamtion": {
+            "post": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "ReponseReclamtion",
+                "parameters": [
+                    {
+                        "name": "idReclamation",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Reclamation"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     }
                 }
             }
@@ -284,6 +297,36 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    }
+                }
+            }
+        },
+        "/create-payment-intent": {
+            "post": {
+                "tags": [
+                    "stripe-service"
+                ],
+                "operationId": "createPaymentIntent",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Request"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -738,13 +781,20 @@
                             "MONTREetBIJOUX"
                         ]
                     },
+                    "etat": {
+                        "type": "string",
+                        "enum": [
+                            "Terminer",
+                            "Encours"
+                        ]
+                    },
                     "favorisList": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Favoris"
                         }
                     },
-                    "prixE": {
+                    "prixGagnant": {
                         "type": "number",
                         "format": "float"
                     },
@@ -752,7 +802,7 @@
                         "type": "number",
                         "format": "float"
                     },
-                    "prixGagnant": {
+                    "prixE": {
                         "type": "number",
                         "format": "float"
                     }
@@ -798,6 +848,39 @@
                     "nano": {
                         "type": "integer",
                         "format": "int32"
+                    }
+                }
+            },
+            "Request": {
+                "required": [
+                    "amount",
+                    "productName"
+                ],
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "minimum": 4,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "productName": {
+                        "maxLength": 200,
+                        "minLength": 5,
+                        "type": "string"
+                    }
+                }
+            },
+            "Response": {
+                "type": "object",
+                "properties": {
+                    "intentID": {
+                        "type": "string"
+                    },
+                    "clientSecret": {
+                        "type": "string"
                     }
                 }
             },
@@ -962,11 +1045,18 @@
                             "MONTREetBIJOUX"
                         ]
                     },
-                    "prixE": {
+                    "etat": {
+                        "type": "string",
+                        "enum": [
+                            "Terminer",
+                            "Encours"
+                        ]
+                    },
+                    "prixGagnant": {
                         "type": "number",
                         "format": "float"
                     },
-                    "prixGagnant": {
+                    "prixE": {
                         "type": "number",
                         "format": "float"
                     }
